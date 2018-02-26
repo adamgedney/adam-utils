@@ -1,7 +1,7 @@
 {
   "name": "adam-utils",
-  "version": "1.5.5",
-  "description": "A simple npm utility package for managing collection functions",
+  "version": "1.0.0",
+  "description": "A simple npm utility package",
   "keywords": [
     "npm-package",
     "package",

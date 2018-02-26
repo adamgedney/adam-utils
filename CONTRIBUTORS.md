@@ -1,8 +1,4 @@
-# An npm package for managing collection functions 
-[![Build Status](https://travis-ci.org/eunikitin/npm-package-es6-boilerplate.svg?branch=master)](https://travis-ci.org/eunikitin/npm-package-es6-boilerplate)
-[![Coverage Status](https://coveralls.io/repos/github/eunikitin/npm-package-es6-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/eunikitin/npm-package-es6-boilerplate?branch=master)
-[![dependencies Status](https://david-dm.org/eunikitin/npm-package-es6-boilerplate/status.svg)](https://david-dm.org/eunikitin/npm-package-es6-boilerplate)
-[![devDependencies Status](https://david-dm.org/eunikitin/npm-package-es6-boilerplate/dev-status.svg)](https://david-dm.org/eunikitin/npm-package-es6-boilerplate?type=dev)
+# An npm utility package
 
 ## Features
 * Build with [webpack 2](https://webpack.js.org/) and [babel](https://babeljs.io/)
@@ -11,11 +7,6 @@
 * Lint with [eslint](http://eslint.org/) ([air-bnb config](https://github.com/airbnb/javascript))
 * CI with [travis-ci.org](https://travis-ci.org/)
 * Coverage info with [coveralls.io](https://coveralls.io)
-
-## Getting started
-1. [Clone this repo from github](https://github.com/eunikitin/npm-package-es6-boilerplate)
-2. Inside repo directory run `npm install && rm -r .git && git init`
-2. Update package.json with your information
 
 ## Usage
 ### Commands

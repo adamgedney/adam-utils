@@ -1,11 +1,70 @@
 {
   "name": "adam-utils",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.5.5",
+  "description": "A simple npm utility package for managing collection functions",
+  "keywords": [
+    "npm-package",
+    "package",
+    "es6"
+  ],
+  "license": "MIT",
+  "author": "Adam Gedney",
+  "homepage": "https://github.com/adamgedney/adam-utils.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adamgedney/adam-utils.git"
+  },
+  "bugs": {
+    "mail": "adam.gedney@gmail.com",
+    "url": "https://github.com/adamgedney/adam-utils.git/issues"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf ./.nyc_output ./.tmp ./coverage ./lib",
+    "dev": "node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.build.development.js",
+    "build": "node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.build.production.js",
+    "test": "mocha-webpack --webpack-config webpack.config.test.js -r jsdom-global/register \"test/runner.js\"",
+    "test:watch": "mocha-webpack --webpack-config webpack.config.test.js -r jsdom-global/register \"test/runner.js\" --watch",
+    "cover": "nyc --reporter=lcov --reporter=text npm run test",
+    "coveralls": "nyc --reporter=lcov --reporter=text npm run test && cat ./coverage/lcov.info | coveralls",
+    "lint": "eslint src test",
+    "prepublish": "npm run clean && npm run lint && npm run test && npm run build",
+    "start": "npm run test:watch"
   },
-  "author": "",
-  "license": "ISC"
+  "nyc": {
+    "include": [
+      "src/**/*.js"
+    ],
+    "instrument": false,
+    "sourceMap": false
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "chai": "^4.0.1",
+    "coveralls": "^2.13.1",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1",
+    "fs-file-tree": "^1.0.4",
+    "istanbul-instrumenter-loader": "^2.0.0",
+    "jsdom": "^11.6.2",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^3.4.2",
+    "mocha-webpack": "^0.7.0",
+    "nyc": "^11.0.1",
+    "rimraf": "^2.6.1",
+    "sinon": "^2.3.2",
+    "webpack": "^2.6.1",
+    "webpack-merge": "^4.1.0",
+    "webpack-node-externals": "^1.6.0",
+    "webpack-uglify-js-plugin": "^1.1.9"
+  }
 }
